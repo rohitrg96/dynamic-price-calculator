@@ -11,7 +11,7 @@ export const Options: React.FC<{
         {items.map((s) => (
           <button
             key={s.value}
-            className={`px-4 py-2 rounded-full border ${
+            className={`cursor-pointer px-4 py-2 rounded-full border ${
               item === s.value ? "bg-cyan-500 text-white" : "bg-cyan-200"
             }`}
             onClick={() => setItem(s.value)}

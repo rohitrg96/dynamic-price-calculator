@@ -6,13 +6,12 @@ const GlobalCard: React.FC<GlobalCardProps> = ({ children, save }) => {
   return (
     <>
       <div className="max-w-5xl mx-auto p-6 mt-12 bg-cyan-50  rounded-2xl shadow-lg border-2 border-cyan-600 italic ">
-        <div className="border-2 border-cyan-600 mb-4 h-12 content-center rounded-xl text-lg font-semibold  bg-cyan-100 flex justify-between">
+        <div className="border-2 border-cyan-600 mb-4 sm:h-12 content-center rounded-xl   bg-cyan-100 flex justify-between sm:text-lg font-semibold ">
           <div>💰 Custom Pricing Calculator </div>
           <div>
-            {/* <button onClick={() => {}}> Save </button> */}
             <button
               onClick={() => save()}
-              className="bg-cyan-400  rounded-2xl border-cyan-600 border-2 m-1 px-2"
+              className="bg-cyan-200 hover:bg-cyan-400 hover:text-white rounded-2xl border-black border-1  m-1 px-2 sm:h-9 cursor-pointer"
             >
               Save & Share
             </button>

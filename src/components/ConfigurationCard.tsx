@@ -44,7 +44,7 @@ const ConfigurationCard: React.FC<Props> = ({ onChange }) => {
             <button
               key={addon.value}
               onClick={() => handleAddonToggle(addon.value)}
-              className={`px-3 py-2 border rounded ${
+              className={`cursor-pointer px-3 py-2 border rounded ${
                 selectedAddons.includes(addon.value)
                   ? "bg-cyan-500 text-white"
                   : " bg-cyan-200"
