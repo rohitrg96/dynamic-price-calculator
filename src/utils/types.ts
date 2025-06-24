@@ -35,4 +35,7 @@ export interface PriceInputs {
 
 export interface Configprops {
   onChange: (config: { size: string; color: string; addons: string[] }) => void;
+  sizefromUrl?: string;
+  colorfromUrl?: string;
+  addonsfromUrl?: string[];
 }
