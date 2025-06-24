@@ -27,3 +27,12 @@ export type PricingCardProps = {
   color: string;
   addons: string[];
 };
+
+export interface PriceInputs {
+  size: string;
+  addons: string[];
+}
+
+export interface Configprops {
+  onChange: (config: { size: string; color: string; addons: string[] }) => void;
+}

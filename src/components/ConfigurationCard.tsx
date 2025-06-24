@@ -1,25 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { colors, addons, sizes } from "../utils/const";
 import { Options } from "./Options";
+import type { Configprops } from "../utils/types";
+import { useConfig } from "../hooks/useConfig";
 
-export interface Props {
-  onChange: (config: { size: string; color: string; addons: string[] }) => void;
-}
-
-const ConfigurationCard: React.FC<Props> = ({ onChange }) => {
-  const [size, setSize] = useState("M");
-  const [color, setColor] = useState("red");
-  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
-
-  const handleAddonToggle = (addon: string) => {
-    setSelectedAddons((prev) =>
-      prev.includes(addon) ? prev.filter((a) => a !== addon) : [...prev, addon]
-    );
-  };
-
-  useEffect(() => {
-    onChange({ size, color, addons: selectedAddons });
-  }, [size, color, selectedAddons]);
+const ConfigurationCard: React.FC<Configprops> = ({ onChange }) => {
+  const { size, setSize, color, setColor, selectedAddons, handleAddonToggle } =
+    useConfig({ onChange });
 
   return (
     <div className="p-4 border-2 border-cyan-600 rounded-xl shadow-sm bg-cyan-100">

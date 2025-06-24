@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { basePrices, addonPrices } from "../utils/const";
+import React from "react";
+import { addonPrices } from "../utils/const";
 import type { PricingCardProps } from "../utils/types";
+import { usePriceCalculator } from "../hooks/usePriceCalculator";
 
 const PricingCard: React.FC<PricingCardProps> = ({ size, color, addons }) => {
-  const [quantity, setQuantity] = useState(1);
-  const base = basePrices[size] || 12;
-  const addonsTotal = addons.reduce((sum, a) => sum + (addonPrices[a] || 0), 0);
-  const subtotal = base + addonsTotal;
-  const total = subtotal * quantity;
-  const discount = quantity >= 10 ? 0.1 * total : 0;
-  const finalPrice = total - discount;
+  const { base, subtotal, discount, finalPrice, quantity, setQuantity } =
+    usePriceCalculator({
+      size,
+      addons,
+    });
 
   return (
     <div className="p-4 border-2 border-cyan-600 rounded-xl shadow-sm bg-cyan-100">
