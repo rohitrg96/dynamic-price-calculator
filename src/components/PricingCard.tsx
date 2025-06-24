@@ -1,14 +1,13 @@
-import React from "react";
-import { addonPrices } from "../utils/const";
-import type { PricingCardProps } from "../utils/types";
-import { usePriceCalculator } from "../hooks/usePriceCalculator";
+import React from 'react';
+import { addonPrices } from '../utils/const';
+import type { PricingCardProps } from '../utils/types';
+import { usePriceCalculator } from '../hooks/usePriceCalculator';
 
 const PricingCard: React.FC<PricingCardProps> = ({ size, color, addons }) => {
-  const { base, subtotal, discount, finalPrice, quantity, setQuantity } =
-    usePriceCalculator({
-      size,
-      addons,
-    });
+  const { base, subtotal, discount, finalPrice, quantity, setQuantity } = usePriceCalculator({
+    size,
+    addons,
+  });
 
   return (
     <div className="p-4 border-2 border-cyan-600 rounded-xl shadow-sm bg-cyan-100">
@@ -22,8 +21,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ size, color, addons }) => {
         {addons.map((a) => (
           <>
             <li key={a} className="mt-4">
-              {a.charAt(0).toUpperCase() + a.slice(1)}: $
-              {addonPrices[a].toFixed(2)}
+              {a.charAt(0).toUpperCase() + a.slice(1)}: ${addonPrices[a].toFixed(2)}
             </li>
           </>
         ))}
@@ -38,11 +36,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ size, color, addons }) => {
             onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
           />
         </li>
-        {discount > 0 && (
-          <li className="text-cyan-600">
-            Bulk Discount: -${discount.toFixed(2)}
-          </li>
-        )}
+        {discount > 0 && <li className="text-cyan-600">Bulk Discount: -${discount.toFixed(2)}</li>}
         <li className="font-bold mt-4">Total: ${finalPrice.toFixed(2)}</li>
       </ul>
 

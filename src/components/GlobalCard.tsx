@@ -1,6 +1,6 @@
-import React from "react";
-import type { GlobalCardProps } from "../utils/types";
-import { Chart } from "./Chart";
+import React from 'react';
+import type { GlobalCardProps } from '../utils/types';
+import { Chart } from './Chart';
 
 const GlobalCard: React.FC<GlobalCardProps> = ({ children, save }) => {
   return (

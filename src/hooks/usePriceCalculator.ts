@@ -1,6 +1,6 @@
-import { basePrices, addonPrices } from "../utils/const";
-import type { PriceInputs } from "../utils/types";
-import { useState } from "react";
+import { basePrices, addonPrices } from '../utils/const';
+import type { PriceInputs } from '../utils/types';
+import { useState } from 'react';
 
 export const usePriceCalculator = ({ size, addons }: PriceInputs) => {
   const [quantity, setQuantity] = useState(1);

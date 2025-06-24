@@ -1,12 +1,5 @@
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-import { mockPriceData } from "../utils/const";
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { mockPriceData } from '../utils/const';
 
 export const Chart = () => {
   return (
@@ -15,12 +8,7 @@ export const Chart = () => {
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
-        <Line
-          type="monotone"
-          dataKey="price"
-          stroke="#3b82f6"
-          strokeWidth={2}
-        />
+        <Line type="monotone" dataKey="price" stroke="#3b82f6" strokeWidth={2} />
       </LineChart>
     </ResponsiveContainer>
   );

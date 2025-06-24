@@ -1,12 +1,13 @@
-import React from "react";
-import { colors, addons, sizes } from "../utils/const";
-import { Options } from "./Options";
-import type { Configprops } from "../utils/types";
-import { useConfig } from "../hooks/useConfig";
+import React from 'react';
+import { colors, addons, sizes } from '../utils/const';
+import { Options } from './Options';
+import type { Configprops } from '../utils/types';
+import { useConfig } from '../hooks/useConfig';
 
 const ConfigurationCard: React.FC<Configprops> = ({ onChange }) => {
-  const { size, setSize, color, setColor, selectedAddons, handleAddonToggle } =
-    useConfig({ onChange });
+  const { size, setSize, color, setColor, selectedAddons, handleAddonToggle } = useConfig({
+    onChange,
+  });
 
   return (
     <div className="p-4 border-2 border-cyan-600 rounded-xl shadow-sm bg-cyan-100">
@@ -32,9 +33,7 @@ const ConfigurationCard: React.FC<Configprops> = ({ onChange }) => {
               key={addon.value}
               onClick={() => handleAddonToggle(addon.value)}
               className={`cursor-pointer px-3 py-2 border rounded ${
-                selectedAddons.includes(addon.value)
-                  ? "bg-cyan-500 text-white"
-                  : " bg-cyan-200"
+                selectedAddons.includes(addon.value) ? 'bg-cyan-500 text-white' : ' bg-cyan-200'
               }`}
             >
               {addon.label}

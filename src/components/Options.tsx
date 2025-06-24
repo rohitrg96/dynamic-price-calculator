@@ -1,4 +1,4 @@
-import type { Option } from "../utils/types";
+import type { Option } from '../utils/types';
 
 export const Options: React.FC<{
   item: string;
@@ -12,7 +12,7 @@ export const Options: React.FC<{
           <button
             key={s.value}
             className={`cursor-pointer px-4 py-2 rounded-full border ${
-              item === s.value ? "bg-cyan-500 text-white" : "bg-cyan-200"
+              item === s.value ? 'bg-cyan-500 text-white' : 'bg-cyan-200'
             }`}
             onClick={() => setItem(s.value)}
           >
